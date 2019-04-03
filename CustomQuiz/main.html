@@ -385,18 +385,18 @@
 		{
 			var dotdiv = document.getElementById("dot" + qDotArray[0]).parentNode;
 			var output = document.getElementById("output");
-			qDotArray.shift();
 
 			var correct = dotdiv.getAttribute("answer");
 			if (answer.toUpperCase() == correct.toUpperCase())
 			{
 				output.innerHTML = "Correct!";
 				dotdiv.childNodes[0].style.display = "none";
-			        removeAnswerFromBank(answer);
-			        selectDot();
+				qDotArray.shift();
+				removeAnswerFromBank(answer);
+				selectDot();
 			}
 			else
-				output.innerHTML = "Sorry, the correct answer was: " + correct;
+				output.innerHTML = "Incorrect. Try again";
 		}
 	}
 
