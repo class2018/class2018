@@ -389,12 +389,14 @@
 
 			var correct = dotdiv.getAttribute("answer");
 			if (answer.toUpperCase() == correct.toUpperCase())
-				output.innerHTML = "Correct!"
+			{
+				output.innerHTML = "Correct!";
+				dotdiv.childNodes[0].style.display = "none";
+			        removeAnswerFromBank(answer);
+			        selectDot();
+			}
 			else
 				output.innerHTML = "Sorry, the correct answer was: " + correct;
-			dotdiv.childNodes[0].style.display = "none";
-
-			selectDot();
 		}
 	}
 
